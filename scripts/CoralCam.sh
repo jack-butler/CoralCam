@@ -72,9 +72,9 @@ cd /home/pi
 # -----------------------------------------------------------------------
 # Check temperature
 # -----------------------------------------------------------------------
-. /home/pi/wittyPi/utilities.sh
+. /home/pi/wittypi/utilities.sh
 
-cd /home/pi/wittyPi && temp="$(get_temperature)"
+cd /home/pi/wittypi && temp="$(get_temperature)"
 cd /home/pi && echo "wittyPi temperature at $(date +%T) is $temp" |& tee -a "${rf}"
 
 # -----------------------------------------------------------------------
