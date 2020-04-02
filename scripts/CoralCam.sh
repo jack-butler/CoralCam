@@ -57,7 +57,7 @@ cd /media/DATA
 
 cnt=1
 
-while [ cnt -lt 6 ]; do
+while [ $cnt -lt 6 ]; do
 
 fname=$(date +"%Y-%m-%d_%H%M%S")
 raspistill -vf -hf --raw -o $fname.jpg
