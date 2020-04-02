@@ -37,7 +37,7 @@ echo "Start time of CoralCam.sh: $start" |& tee -a "${rf}"
 # -----------------------------------------------------------------------
 echo "Scheduling next start-up..." |& tee -a "${rf}"
 
-sudo $HOME/wittyPi/runScript.sh |& tee -a "${rf}"
+sudo /home/pi//wittypi/runScript.sh |& tee -a "${rf}"
 
 # -----------------------------------------------------------------------
 # Turn on lights
