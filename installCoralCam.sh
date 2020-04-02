@@ -39,7 +39,7 @@ echo "|"
 echo "--------------------------------------------------------------------------------"
 
 cd /home/
-WD=/home/$(ls)
+WD=/home/pi
 cd $WD
 
 # ----------------------------------------------------------
@@ -50,13 +50,13 @@ echo "Copying config files. Previous cmdline, config, bashrc, and rclocal files 
 cp /boot/cmdline.txt /boot/cmdline.txt.old
 echo "$(cat /boot/cmdline.txt) logo.nologo quiet splash loglevel=0" > /boot/cmdline.txt
 cp /boot/config.txt /boot/config.txt.old
-cp $WD/CoralCam/configs/config.txt /boot/config.txt
+cp $WD/CoralCam/configs/config.txt /boot/
 
 cp .bashrc .bashrc.old
 cp $WD/CoralCam/configs/.bashrc .
 
 cp /etc/rc.local /etc/rc.local.old
-cp $WD/CoralCam/configs/rc.local /etc/rc.local
+cp $WD/CoralCam/configs/rc.local /etc/
 
 echo "Done copying configs"
 
@@ -66,10 +66,10 @@ echo "Done copying configs"
 echo "Copying and installing services..."
 
 cp /etc/systemd/system/autologin@.service /etc/systemd/system/autologin@.service.old
-cp $WD/CoralCam/services/autologin@.service /etc/systemd/system/autologin@.service
+cp $WD/CoralCam/services/autologin@.service /etc/systemd/system/
 
-cp $WD/CoralCam/services/image_on_shutdown.service /etc/systemd/system/image_on_shutdown.service
-cp $WD/CoralCam/services/splashscreen.service /etc/systemd/system/splashscreen.service
+cp $WD/CoralCam/services/image_on_shutdown.service /etc/systemd/system/
+cp $WD/CoralCam/services/splashscreen.service /etc/systemd/system/
 
 systemctl enable splashscreen.service
 systemctl start splashscreen.service
@@ -86,7 +86,7 @@ echo "Done creating boot and shutdown services"
 # ----------------------------------------------------------
 echo "Copying wittyPi schedule scripts..."
 
-cd $WD/wittyPi/schedules
+cd $WD/wittypi/schedules
 
 cp $WD/CoralCam/schedules/* .
 cp $WD/CoralCam/schedules/CoralCam_duty_cycle.wpi ../schedule.wpi
@@ -108,7 +108,7 @@ echo "Done"
 # ----------------------------------------------------------
 # Copy splashscreen image
 # ----------------------------------------------------------
-cp $WD/TrapCam/splash.png /etc/splash.png
+cp $WD/CoralCam/splash.png /etc/
 
 # ----------------------------------------------------------
 # Make data mount location
